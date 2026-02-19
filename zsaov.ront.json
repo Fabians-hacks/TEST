@@ -1,0 +1,9 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SAP Object Type ZSAOV",
+    "originalLanguage": "en"
+  },
+  "typeCategory": "businessObject",
+  "name": "ZSAOV"
+}

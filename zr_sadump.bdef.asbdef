@@ -1,0 +1,47 @@
+managed implementation in class ZBP_R_SADUMP unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_SADUMP alias ZrSadump
+persistent table ZSA_DUMP
+extensible
+draft table ZSADUMP_D
+etag master LocalLastChanged
+lock master total etag LastChanged
+authorization master( global )
+{
+  field ( numbering: managed)
+   ID;
+
+  field ( readonly )
+   LocalLastChanged,
+   LastChanged;
+
+  field ( readonly : update )
+   ID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZSA_DUMP corresponding extensible
+  {
+    ID = ID;
+    Filename = FILENAME;
+    Mimetype = MIMETYPE;
+    Attachment = ATTACHMENT;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LocalLastChanged = LOCAL_LAST_CHANGED;
+    LastChanged = LAST_CHANGED;
+    IsCleaned = IS_CLEANED;
+  }
+
+}

@@ -1,0 +1,46 @@
+managed implementation in class ZBP_R_SAOV unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_SAOV alias ZrSaov
+persistent table ZSA_OV
+extensible
+draft table ZSAOV_D
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+
+{
+  field ( readonly )
+   SurveyID,
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt,
+   LocalLastChangedAt;
+
+  field ( numbering : managed )
+   SurveyID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for ZSA_OV corresponding extensible
+  {
+    SurveyID = SURVEY_ID;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LastChangedBy = LAST_CHANGED_BY;
+    LastChangedAt = LAST_CHANGED_AT;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+  }
+
+}

@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_SADUMP'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_SADUMP'
+  }
+}
+define service ZUI_SADUMP_O4 provider contracts odata_v4_ui {
+  expose ZC_SADUMP;
+}

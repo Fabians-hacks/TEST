@@ -1,0 +1,6 @@
+@EndUserText.label: 'ZC_SAOV'
+@MappingRole: true
+define role ZC_SAOV {
+  grant select on ZC_SAOV
+  where INHERITING CONDITIONS FROM ENTITY ZR_SAOV DEFAULT TRUE;
+}

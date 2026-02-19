@@ -1,0 +1,10 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "SAP Object Node Type ZSADUMP",
+    "originalLanguage": "en"
+  },
+  "name": "ZSADUMP",
+  "sapObjectType": "ZSADUMP",
+  "rootNode": true
+}
