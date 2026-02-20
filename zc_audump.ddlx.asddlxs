@@ -109,4 +109,5 @@ annotate view ZC_AUDUMP with
   LastChanged;
   @UI.selectionField: [{ position: 90 }]
   isCleaned;
+  
 }

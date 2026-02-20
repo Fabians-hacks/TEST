@@ -10,6 +10,7 @@ authorization master ( instance )
   create ( authorization : global );
   update;
   delete;
+  action analyze_with_ai;
   draft action Edit;
   draft action Activate optimized;
   draft action Discard;
